@@ -4,7 +4,7 @@
 
   function render(data) {
     return `
-      <p class='response-para'>ip-address: <span class='response-text'>${data.ipaddress}</span></p>
+      <p class='response-para'>IP address: <span class='response-text'>${data.ipaddress}</span></p>
       <p class='response-para'>language: <span class='response-text'>${data.language}</span></p>
       <p class='response-para'>software: <span class='response-text'>${data.software}</span></p>
     `;
