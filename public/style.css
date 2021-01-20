@@ -2,6 +2,8 @@
   --main-bg-color: #efefef;
   --secondary-bg-color: #fff;
   --btn-color: #000;
+  --btn-color: #4caf50;
+  --btn-hover: #09602f;
   --code-bg-color: #333;
   --key-color: #fff;
   --accent-color: orange;
@@ -34,11 +36,16 @@ body {
   border-radius: 4px;
   padding: 1em;
   margin-top: 40px;
-  width: 25em;
+  width: 36em;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+h2,
+footer {
+  text-align: center;
 }
 
 h3 {
@@ -46,13 +53,19 @@ h3 {
 }
 
 #whoami {
+  display: block;
+  margin: auto;
   cursor: pointer;
   background: var(--btn-color);
   border: none;
   border-radius: 3px;
-  padding: 1em;
+  padding: 1em 3em;
   color: var(--key-color);
   font-weight: bold;
+}
+
+#whoami:hover {
+  background: var(--btn-hover);
 }
 
 #response-box {
@@ -61,7 +74,7 @@ h3 {
   background: var(--code-bg-color);
   width: 100%;
   max-width: 100%;
-  /* height: 5em; */
+  min-height: 9em;
 }
 
 .response-para {
@@ -74,11 +87,69 @@ h3 {
   color: var(--accent-color);
 }
 
+.response-para:last-child {
+  display: flex;
+}
+
+.response-para:last-child .response-text {
+  display: block;
+  margin-left: 0.3em;
+}
+
 .footer {
   margin-top: 40px;
 }
 
 a {
   color: var(--accent-color);
-  /* color: #2574a9; */
+}
+
+@media (max-width: 375px) {
+  body {
+    display: block;
+  }
+
+  .container {
+    position: relative;
+    border-radius: none;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  #response-box {
+    min-height: 15em;
+  }
+
+  #whoami {
+    font-size: 1.3em;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 1em;
+    margin-top: 25px;
+  }
+}
+
+@media (max-height: 375px) {
+  body {
+    display: block;
+  }
+
+  .container {
+    border-radius: none;
+    margin: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  #whoami {
+    font-size: 1.3em;
+  }
+
+  footer {
+    margin-top: 25px;
+  }
 }
